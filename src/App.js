@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// import './App.css';
+import React, {useState} from 'react'
+import { BrowserRouter as Router } from "react-router-dom";
+import Routes from './routes';
+import Footer from './components/Footer';
+import Header from './components/Header';
+import {NavContext} from './context'
+import './styles/app.scss';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch, faUser, faStar, faCodeBranch, faSpinner } from '@fortawesome/free-solid-svg-icons'
+library.add(faSearch, faUser, faStar, faCodeBranch, faSpinner); 
+
 
 function App() {
+  const [next, setNext] = useState({visible: true, disabled: false});
+  const [nextPath, setNextPath] = useState('/search');
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <NavContext.Provider value={{next, nextPath, setNext, setNextPath}}>
+      <div className="App">
+        <Header />
+        {/* <div className="App-title has-text-centered container p-6">
+          <h1 className="title">Title</h1>
+          <h2 className="subtitle">Subtitle</h2>
+        </div> */}
+        <Router>
+          <main className="App-main container">
+            <Routes />
+          </main>
+          <Footer />
+        </Router>
+      </div>
+    </NavContext.Provider>
   );
 }
 
