@@ -7,8 +7,8 @@ import Header from './components/Header';
 import {NavContext} from './context'
 import './styles/app.scss';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch, faUser, faStar, faCodeBranch, faSpinner } from '@fortawesome/free-solid-svg-icons'
-library.add(faSearch, faUser, faStar, faCodeBranch, faSpinner); 
+import { faUser, faStar, faCodeBranch, faGlobe } from '@fortawesome/free-solid-svg-icons'
+library.add( faUser, faStar, faCodeBranch, faGlobe); 
 
 
 function App() {

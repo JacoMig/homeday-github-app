@@ -1,5 +1,7 @@
 import React, {useState, useEffect, useContext} from 'react';
- import {fetchRepo, fetchRepos} from '../../../api';
+import RepoBox from './RepoBox';
+import Loading from '../../ui/Loading';
+import {fetchRepo, fetchRepos} from '../../../api';
 import {NavContext} from '../../../context';
 
 const Repo = (props) => {
@@ -40,13 +42,20 @@ const Repo = (props) => {
    
 
     return (
-        <div>
-             {errorFetchRepo && <p className="error-message">{errorFetchRepo}</p>
-                || 
-                <h3>{repoData.name}</h3>
+        <>
+            {errorFetchRepo 
+            && ( <p className="help is-danger">{errorFetchRepo}</p> )
+            || (
+                Object.keys(repoData).length === 0 
+                &&
+                    <Loading />
+                ||
+                    <RepoBox repo={repoData}/>
+            )
+                
             }
             
-        </div>
+        </>
     );
 };
 

@@ -1,5 +1,5 @@
 {
-  "name": "react-cypress",
+  "name": "homeday-github-app",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -19,11 +19,13 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3008 react-scripts start",
     "build": "react-scripts build",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -44,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^6.1.0"
+    "cypress": "^6.1.0",
+    "gh-pages": "^3.1.0"
   }
 }

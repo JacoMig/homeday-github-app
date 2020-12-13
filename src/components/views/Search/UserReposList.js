@@ -21,6 +21,7 @@ const UserReposList = (props) => {
         if(user.status !== 200){
             setErrorFetchUser(user.errorMsg)
             setNext(state => ({...state, disabled: true}))
+            setErrorFetchRepos('Repos can not be shown')
         }else {
             // If Fetching User is 200 proceed with Fetching Repos
             setUserData(user.data);
@@ -53,13 +54,13 @@ const UserReposList = (props) => {
         <>
             {errorFetchUser 
                 && 
-                    <p className="error-message">{errorFetchUser}</p>
+                    <p className="help is-danger">{errorFetchUser}</p>
                 || 
                     <UserInfo  user={userData} reposCount={reposData.length} />
             }
             {errorFetchRepos 
                 && (
-                    <p className="error-message">{errorFetchRepos}</p>
+                    <p className="help is-danger">{errorFetchRepos}</p>
                 ) 
                 || (
                     reposData.length === 0 &&

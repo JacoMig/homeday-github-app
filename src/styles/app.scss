@@ -22,10 +22,34 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    
     justify-content: center;
 }
 
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    @media screen and (max-width: 600px){
+        font-size: 2.2rem;
+    }
+}
+h2 {
+    font-size: 2rem;
+    @media screen and (max-width: 600px){
+        font-size: 1.7rem;
+    }
+}
+h3 {
+    font-size: 1.7rem;
+    @media screen and (max-width: 600px){
+        font-size: 1.3rem;
+    }
+}
+h4 {
+    font-size: 1.3rem;
+    @media screen and (max-width: 600px){
+        font-size: 1rem;
+    }
+}
 header {
     background-color: white;
 }
@@ -38,4 +62,16 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.help {
+    font-size: 1.3rem;
+}
+
+.box {
+    width: 100%;
+    @media screen and (max-width: 600px){
+        width: 96%;
+        margin: 0 auto;
+    }
 }
