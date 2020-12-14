@@ -7,7 +7,7 @@ const RepoItem = ({repo, user_name}) => {
     console.log(repo)
     
     return (
-        <a href={`/${user_name}/${repo.name}`} className="mb-6 is-block box repo">
+        <a href={`/user/${user_name}/${repo.name}`} className="mb-6 is-block box repo">
             
                 <article className="is-flex">
                     <figure className="image is-64x64 repo-image">

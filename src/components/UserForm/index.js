@@ -53,6 +53,7 @@ const UserForm = (props) => {
         const name = e.target.name;
         const value =  name !== 'agree' ? e.target.value : e.target.checked;
         validationForm(name, value)
+        !isSubmit && setIsSubmit(true) 
     }
 
     const setNextButtonPath = () => {
@@ -69,7 +70,7 @@ const UserForm = (props) => {
 
     useEffect(() => {
         if(userVal.name !== ''){
-            setNextPath(`/${userVal.name}`)
+            setNextPath(`/user/${userVal.name}`)
         }
     }, [userVal])
 
@@ -81,7 +82,7 @@ const UserForm = (props) => {
     return (
         <div className="box form-user">
             <form onSubmit={checkForm}>
-                <div className="field">
+                <div className="field name">
                     <label className="label">Username</label>
                     <div className="control">
                         <input 
@@ -93,7 +94,7 @@ const UserForm = (props) => {
                     </div>
                     {isSubmit && <ErrorBox isValid={!errors.name} message={nameErr} /> }
                 </div>
-                <div className="field">
+                <div className="field email">
                     <label className="label">Email</label>
                     <div className="control">
                         <input 
@@ -105,15 +106,16 @@ const UserForm = (props) => {
                     </div>
                     {isSubmit && <ErrorBox isValid={!errors.email} message={emailErr} /> }
                 </div>
-                <div className="field">
-                    <div className="control agree">
+                <div className="field agree">
+                    <div className="control">
                         <input
                             type="checkbox"
                             onChange={handleChange} 
                             checked={userVal.agree}
                             name="agree"
+                            id="agree"
                             /> 
-                        Agree with terms and service
+                        <label htmlFor="agree">Agree with terms and service</label>
                     </div>
                     {isSubmit && <ErrorBox isValid={!errors.agree} message={agreeErr} /> }
                 </div>

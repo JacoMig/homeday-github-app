@@ -9,7 +9,7 @@ import Home from './components/views/Home'
 import Search from './components/views/Search'
 import Repo from './components/views/Repo'
 import UserReposList from './components/views/Search/UserReposList'
-  
+import NotFound from './components/views/NotFound'
 const Routes = () => {
     return (
         
@@ -32,18 +32,19 @@ const Routes = () => {
           />
           <Route 
               exact 
-              path="/:user_name" 
+              path="/user/:user_name" 
               render={routeProps =>
                 <UserReposList history={routeProps.history} match={routeProps.match} />
               }
           />
          <Route 
               exact 
-              path="/:user_name/:repo_name" 
+              path="/user/:user_name/:repo_name" 
               render={routeProps =>
                 <Repo history={routeProps.history} match={routeProps.match} />
               }
           /> 
+         <Route path="*" component={NotFound} /> 
         </Switch>
     
     );

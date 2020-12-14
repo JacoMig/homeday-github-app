@@ -24,6 +24,7 @@ const UserReposList = (props) => {
             setErrorFetchRepos('Repos can not be shown')
         }else {
             // If Fetching User is 200 proceed with Fetching Repos
+            // Next Page Url is gonna be the next repo on the list
             setUserData(user.data);
             const repos = await fetchRepos(user_name)
             if(repos.status !== 200){
@@ -45,7 +46,7 @@ const UserReposList = (props) => {
     
     useEffect(() => {
         if(reposData.length > 0){
-            setNextPath(`/${user_name}/${reposData[0].name}`)
+            setNextPath(`/user/${user_name}/${reposData[0].name}`)
         }
         
     }, [reposData])

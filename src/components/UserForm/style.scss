@@ -1,9 +1,12 @@
 form {
-    label:after, .agree:after {
+    label:after, .agree label:after {
         content: '*';
         display: inline-block;
         color: #f14668;
         padding-left: 0.5rem;
     }
-  
+    .agree label {cursor: pointer;}
+    .help {
+        padding: 0;
+    }
 }

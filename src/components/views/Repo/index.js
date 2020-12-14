@@ -21,7 +21,7 @@ const Repo = (props) => {
                 // Find the next repo in the collection for navigation
                 const repo_index = repos.data.findIndex(repo => repo.name === repo_name)
                 setNext(state => ({...state, disabled: false}))
-                setNextPath(`/${user_name}/${repos.data[repo_index+1].name}`)
+                setNextPath(`/user/${user_name}/${repos.data[repo_index+1].name}`)
             }else {
                 setNext(state => ({...state, disabled: true}))
             }

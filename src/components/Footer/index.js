@@ -17,9 +17,9 @@ const Footer = (props) => {
         <footer className="footer">
             <div className="content has-text-centered">
                 {prev &&
-                    <button className="mr-6 button is-danger is-outlined" onClick={() => history.goBack()}>Prev</button>}
+                    <button className="prev mr-6 button is-danger is-outlined" onClick={() => history.goBack()}>Prev</button>}
                 {next &&
-                    <button className="ml-6 button is-danger is-outlined" disabled={next.disabled} onClick={() => history.push(nextPath)}>Next</button>}
+                    <button className="next ml-6 button is-danger is-outlined" disabled={next.disabled} onClick={() => history.push(nextPath)}>Next</button>}
             </div>    
         </footer>
     );

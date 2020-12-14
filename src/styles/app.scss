@@ -65,13 +65,13 @@ main {
 }
 
 .help {
-    font-size: 1.3rem;
+    padding: 0 6rem;
 }
 
 .box {
-    width: 100%;
+    width: 600px;
     @media screen and (max-width: 600px){
-        width: 96%;
+        width: 100%;
         margin: 0 auto;
     }
 }

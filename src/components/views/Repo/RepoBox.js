@@ -17,7 +17,7 @@ const RepoBox = ({repo}) => {
     }, [repo])
     
     return (
-        <div className="box">
+        <div className="box repoBox">
             <h1>{repo.name}</h1>
             <div className="subtitle pt-4 is-flex is-align-content-center">
                 <div>

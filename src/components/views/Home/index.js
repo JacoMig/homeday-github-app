@@ -6,9 +6,10 @@ import {NavContext} from '../../../context';
 import './style.scss';
 
 const Home = () => {
-  const [reposData, setReposData] = useState({});
-  const [errorFetchRepos, setErrorFetchRepos] = useState(null);
+  const [reposData, setReposData] = useState([]);
+  const [errorFetchRepos, setErrorFetchRepos] = useState('');
   const { setNext } = useContext(NavContext);
+  
   const getTopStarsRepos = (repos) => {
     const filtered = repos.sort((a,b) => b.stargazers_count - a.stargazers_count).splice(0, 3)
     return filtered
@@ -19,13 +20,10 @@ const Home = () => {
     repos.errorMsg !== "" ? setErrorFetchRepos(repos.errorMsg) : setReposData(getTopStarsRepos(repos.data)) 
   }
 
-
   useEffect(() => {
      fetchData()
      setNext(state => ({...state, disabled: false}))
   }, [])
-
- 
 
   return (
       <>
@@ -47,7 +45,6 @@ const Home = () => {
               <Loading />
           )
         }
-        
       </>
   );
 };
