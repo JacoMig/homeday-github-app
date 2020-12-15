@@ -35,20 +35,20 @@ describe('@Search Page Layout', () => {
         cy.get('.help').should('not.exist');
     }) 
 /* 
-    it('Should change route to /user/:UserName on Submit Form', () => {
+    it('Should change route to /:UserName on Submit Form', () => {
         cy.get('.email input[type=text]').type(emailVal);
         cy.get('.name input[type=text]').type(userVal);
         cy.get('.agree input[type=checkbox]').click();
         cy.get('button[type=submit]').click();
-        cy.location('pathname').should('eq', `/user/${userVal}`)
+        cy.location('pathname').should('eq', `/${userVal}`)
     }) */
     
-    it('Should change route to /user/:UserName on Clicking Next Button', () => {
+    it('Should change route to /:UserName on Clicking Next Button', () => {
         cy.get('.email input[type=text]').type(emailVal);
         cy.get('.name input[type=text]').type(userVal);
         cy.get('.agree input[type=checkbox]').click();
         cy.get('.next').click();
-        cy.location('pathname').should('eq', `/user/${userVal}`)
+        cy.location('pathname').should('eq', `/${userVal}`)
     })
 
 

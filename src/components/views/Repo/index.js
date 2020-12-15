@@ -4,6 +4,15 @@ import Loading from '../../ui/Loading';
 import {fetchRepo, fetchRepos} from '../../../api';
 import {NavContext} from '../../../context';
 
+export const nextRepoName = (repos, current_repo_name) => {
+    const index = repos.findIndex(repo => repo.name === current_repo_name)
+    if(repos[index + 1]){
+        return repos[index + 1].name
+    }else {
+        return null
+    }
+}
+
 const Repo = (props) => {
     const {setNextPath, setNext} = useContext(NavContext);
     const {match} = props;
@@ -18,10 +27,13 @@ const Repo = (props) => {
             setRepoData(repo.data)
             const repos = await fetchRepos(user_name)
             if(repos.status === 200){
-                // Find the next repo in the collection for navigation
-                const repo_index = repos.data.findIndex(repo => repo.name === repo_name)
-                setNext(state => ({...state, disabled: false}))
-                setNextPath(`/user/${user_name}/${repos.data[repo_index+1].name}`)
+                const next = nextRepoName(repos.data, repo_name)
+                if(next){
+                    setNext(state => ({...state, disabled: false}))
+                    setNextPath(`/${user_name}/${next}`)
+                }else {
+                    setNext(state => ({...state, disabled: true}))    
+                }
             }else {
                 setNext(state => ({...state, disabled: true}))
             }
@@ -34,9 +46,7 @@ const Repo = (props) => {
 
 
     useEffect(() => {
-        if(repo_name){
-            fetchData()
-        }
+        repo_name && fetchData()
     }, [repo_name]) 
 
    

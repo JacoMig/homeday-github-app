@@ -1,5 +1,5 @@
 const repoName = 'homeday-blocks';
-const path = `http://localhost:3008/user/homeday-de/${repoName}`;
+const path = `http://localhost:3008/homeday-de/${repoName}`;
 const repoApiUrl = `https://api.github.com/repos/homeday-de/${repoName}`;
 const reposListApiUrl = `https://api.github.com/users/homeday-de/repos`;
 
@@ -27,7 +27,7 @@ describe('@RepoPage Fetch Repo API', () => {
                 const index = repos.findIndex(repo => repo.name === repoName);
                 const nextRepoName = repos[index+1].name
                 cy.get('.next').click();
-                cy.location('pathname').should('eq', `/user/homeday-de/${nextRepoName}`)
+                cy.location('pathname').should('eq', `/homeday-de/${nextRepoName}`)
             } else if([400,403, 301, 304, 422].includes(int.response.statusCode)){
                 cy.get('.help').should('exist')
                 cy.get('.next').should('be.disabled')

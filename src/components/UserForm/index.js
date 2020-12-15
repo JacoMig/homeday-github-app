@@ -70,7 +70,7 @@ const UserForm = (props) => {
 
     useEffect(() => {
         if(userVal.name !== ''){
-            setNextPath(`/user/${userVal.name}`)
+            setNextPath(`/${userVal.name}`)
         }
     }, [userVal])
 

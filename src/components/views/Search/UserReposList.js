@@ -46,7 +46,7 @@ const UserReposList = (props) => {
     
     useEffect(() => {
         if(reposData.length > 0){
-            setNextPath(`/user/${user_name}/${reposData[0].name}`)
+            setNextPath(`/${user_name}/${reposData[0].name}`)
         }
         
     }, [reposData])

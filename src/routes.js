@@ -32,14 +32,14 @@ const Routes = () => {
           />
           <Route 
               exact 
-              path="/user/:user_name" 
+              path="/:user_name" 
               render={routeProps =>
                 <UserReposList history={routeProps.history} match={routeProps.match} />
               }
           />
          <Route 
               exact 
-              path="/user/:user_name/:repo_name" 
+              path="/:user_name/:repo_name" 
               render={routeProps =>
                 <Repo history={routeProps.history} match={routeProps.match} />
               }

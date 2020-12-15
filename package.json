@@ -21,6 +21,7 @@
   "scripts": {
     "start": "PORT=3008 react-scripts start",
     "build": "react-scripts build",
+    "test": "react-scripts test",
     "cy:run": "cypress run",
     "cy:open": "cypress open",
     "eject": "react-scripts eject",

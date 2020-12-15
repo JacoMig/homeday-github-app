@@ -1,6 +1,6 @@
 const userName = 'JacoMig';
 const userEndPoint = `https://api.github.com/users/${userName}/repos`;
-const path = 'http://localhost:3008/user/'+userName;
+const path = 'http://localhost:3008/'+userName;
 
 describe('@ReposListPage', () => {
     it('Should fetch repos list of a user', () => {

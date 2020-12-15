@@ -25,6 +25,10 @@ body {
     justify-content: center;
 }
 
+.App-main {
+    width: 100%;
+}
+
 h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -70,8 +74,9 @@ main {
 
 .box {
     width: 600px;
+    margin: 0 auto;
     @media screen and (max-width: 600px){
-        width: 100%;
-        margin: 0 auto;
+        width: 80%;
+        
     }
 }

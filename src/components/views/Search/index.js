@@ -9,7 +9,7 @@ const User = (props) => {
     const [userVal, setUserVal] = useState({name: '', email: '', agree: false})
     
     const onSubmit = () => {
-        history.push(`/user/${userVal.name}`)
+        history.push(`/${userVal.name}`)
     }
 
     /* useEffect(() => {
