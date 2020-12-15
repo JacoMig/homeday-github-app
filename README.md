@@ -17,7 +17,7 @@ Views:
 
 ### Tests
 
-This app has been tested with cypress
+This app has been tested with cypress and jest
 
 ### Available Scripts
 
@@ -38,6 +38,10 @@ Launches the cypress gui. Choose from that window which test you want to run
 ### `npm run cy:run`
 
 Launches the tests in the terminal
+
+### `npm run test`
+
+Launches unit test
 
 --------------------------------
 (This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app))
