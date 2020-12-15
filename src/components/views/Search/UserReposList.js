@@ -24,7 +24,7 @@ const UserReposList = (props) => {
             setErrorFetchRepos('Repos can not be shown')
         }else {
             // If Fetching User is 200 proceed with Fetching Repos
-            // Next Page Url is gonna be the next repo on the list
+            // Next Page Url is gonna be the first repo on the list
             setUserData(user.data);
             const repos = await fetchRepos(user_name)
             if(repos.status !== 200){

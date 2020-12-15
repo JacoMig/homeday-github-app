@@ -26,7 +26,7 @@ describe("@HomePage Fetch API from Homeday", () => {
         if(int.response.statusCode === 200){
           cy.get('.box.repo').should('exist').and('have.length', 3)
           cy.get('.help').should('not.exist')
-        } else if([400,403, 301, 304, 422].includes(int.response.statusCode)){
+        } else if([400,403, 301, 304, 422, 404].includes(int.response.statusCode)){
           cy.get('.box.repo').should('not.exist')
           cy.get('.help').should('exist')
         }  
