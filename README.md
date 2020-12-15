@@ -1,12 +1,14 @@
 # Homeday fetching github public repos by username
 
-### Basic instructions
+### Basic instructions to run the app locally
 * git clone git@github.com:JacoMig/homeday-github-app.git 
 * cd homeday-github-app
 * npm i
 * npm run start
 * Open [http://localhost:3008](http://localhost:3008) 
 
+### Deployed
+[http://homeday.jacopomigliorelli.com/](http://homeday.jacopomigliorelli.com/) 
 
 ### Description
 
