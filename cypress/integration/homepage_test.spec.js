@@ -2,18 +2,15 @@ const homedayEndPoint = `https://api.github.com/users/homeday-de/repos`;
 const root = 'http://localhost:3008'
 
 describe('@HomePage Layout', () => {
-  beforeEach(() => {
-    cy.visit(root);
-  })
   it('Should prev button not be in the dom', () => {
+    cy.visit(root);
     cy.get('.prev').should('not.exist');
   })
   it('Should click Fetch Button and go to "/search" page', () => {
-    cy.get('.fetch-cta-block .button').should('exist')
-      cy.get('.fetch-cta-block .button').click();
-      cy.location('href').should('eq', `${root}/search`);
-  })
-  
+    cy.visit(root);
+    cy.get('.fetch-button').click();
+    cy.location('pathname').should('eq', `/search`);
+  }) 
 }) 
 
 describe("@HomePage Fetch API from Homeday", () => {

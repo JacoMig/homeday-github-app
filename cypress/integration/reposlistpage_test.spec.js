@@ -17,9 +17,9 @@ describe('@ReposListPage Fetch repos if a user exists', () => {
     })
   })
     it('Should fetch repos list only if a user exists', () => {
-        cy.intercept(userEndPoint).as('getUserReposList')
-        cy.visit(path);
         if(makeSecondCall){
+          cy.intercept(userEndPoint).as('getUserReposList')
+          cy.visit(path);
           cy.wait('@getUserReposList').then(int => {
             if(int.response.statusCode === 200){
               const bodyLength = int.response.body.length
@@ -30,6 +30,8 @@ describe('@ReposListPage Fetch repos if a user exists', () => {
               cy.get('.help').should('exist')
             }  
           })
+        }else {
+          cy.visit(path);
         }
         
     })

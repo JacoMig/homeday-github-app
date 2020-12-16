@@ -28,7 +28,7 @@ const Home = () => {
   return (
       <>
         <div className="fetch-cta-block has-text-centered">
-          <a className="button is-info is-size-3" href="/search">Fetch a User</a>         
+          <a className="fetch-button button is-info is-size-3" href="/search">Fetch a User</a>         
         </div>
         <h4 className="is-size-3 has-text-centered mb-6">
             Top 3 Repos from <span className="has-text-weight-medium">homeday-de</span>
