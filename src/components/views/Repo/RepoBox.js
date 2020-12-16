@@ -23,7 +23,7 @@ const RepoBox = ({repo}) => {
                 <div>
                     <figure className="image is-64x64 repo-image">
                         {repo.owner.avatar_url && 
-                            <img src={repo.owner.avatar_url} alt="Owner Image" />
+                            <img src={repo.owner.avatar_url} alt="Owner Avatar" />
                             ||
                             <FontAwesomeIcon icon="user" />
                         }
@@ -57,13 +57,13 @@ const RepoBox = ({repo}) => {
                 <ul className="row">
                     {repo.svn_url && 
                         <li>
-                            <a href={repo.svn_url} target="_blank">Link to repo</a>
+                            <a href={repo.svn_url} rel="noreferrer" target="_blank">Link to repo</a>
                         </li>
                     }
                     {repo.homepage && 
                         <li>
                             <FontAwesomeIcon size={'lg'} icon="globe" />
-                            <a href={repo.homepage} className="pl-3" target="_blank">Homepage</a>
+                            <a href={repo.homepage} rel="noreferrer" className="pl-3" target="_blank">Homepage</a>
                         </li>
                     }
                 </ul>
